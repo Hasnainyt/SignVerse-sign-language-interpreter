@@ -1,6 +1,178 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* =========================================
+   SIGNVERSE DESIGN TOKENS
+========================================= */
+
+:root {
+  /* Font */
+  font-family: "Inter", Arial, sans-serif;
+
+  /* Primary */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #eff6ff;
+
+  /* Backgrounds */
+  --color-bg: #eff6ff;
+  --color-bg-subtle: #f8fbff;
+
+  /* Borders */
+  --color-border: #dbe7f5;
+  --color-border-strong: #bfd5ee;
+
+  /* Text */
+  --color-text: #172033;
+  --color-text-secondary: #64748b;
+
+  /* Success */
+  --color-success: #15803d;
+  --color-success-light: #f0fdf4;
+
+  /* Error */
+  --color-error: #dc2626;
+  --color-error-light: #fef2f2;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 14px rgba(30, 64, 175, 0.06);
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.15);
+
+  color: var(--color-text);
+  background: var(--color-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-bg);
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  font-family: "Inter", Arial, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+  background: #bfdbfe;
+  color: #172033;
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+input,
+textarea,
+select {
+  color: var(--color-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bfd5ee;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #93b4d8;
+}
+
+/* =========================================
+   MEDIA
+========================================= */
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
 }

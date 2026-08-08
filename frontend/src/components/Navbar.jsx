@@ -1,43 +1,60 @@
 import { NavLink } from "react-router-dom";
 
-const linkBase =
-  "px-4 py-2 rounded-full text-sm font-semibold border transition-colors";
+const navLinkBase =
+  "px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-6 md:px-14 py-6">
-      <NavLink to="/" className="flex items-center gap-2 text-xl font-bold text-[#111111]">
-        <span className="w-8 h-8 rounded-[10px] bg-[#43A047] text-white flex items-center justify-center text-sm">
-          <img src="/signVerselogo.jpeg" alt="img" />
-        </span>
-        SignVerse
-      </NavLink>
-      <div className="flex items-center gap-2">
+    <header className="sticky top-0 z-50 border-b border-[#dbe7f5] bg-white/95 backdrop-blur-sm">
+      <nav className="mx-auto flex min-h-[76px] w-full max-w-[1180px] items-center justify-between px-6 md:px-8">
+
+        {/* Logo / Brand */}
         <NavLink
-          to="/interpreter"
-          className={({ isActive }) =>
-            `${linkBase} ${
-              isActive
-                ? "bg-[#1E88E5] text-white border-[#1E88E5]"
-                : "bg-white text-[#333] border-[#eeeeee] hover:border-[#1E88E5]"
-            }`
-          }
+          to="/"
+          className="group flex items-center gap-3"
         >
-          Interpreter
+          <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-[#dbe7f5] bg-white shadow-sm">
+            <img
+              src="/signVerselogo.jpeg"
+              alt="SignVerse logo"
+              className="h-full w-full object-cover"
+            />
+          </span>
+
+          <span className="text-xl font-bold tracking-[-0.02em] text-[#172033]">
+            SignVerse
+          </span>
         </NavLink>
-        <NavLink
-          to="/learn"
-          className={({ isActive }) =>
-            `${linkBase} ${
-              isActive
-                ? "bg-[#E53935] text-white border-[#E53935]"
-                : "bg-white text-[#333] border-[#eeeeee] hover:border-[#E53935]"
-            }`
-          }
-        >
-          Learn
-        </NavLink>
-      </div>
-    </nav>
+
+        {/* Navigation */}
+        <div className="flex items-center gap-1 rounded-xl border border-[#dbe7f5] bg-[#f8fbff] p-1">
+          <NavLink
+            to="/interpreter"
+            className={({ isActive }) =>
+              `${navLinkBase} ${
+                isActive
+                  ? "bg-[#2563eb] text-white shadow-sm"
+                  : "text-[#526174] hover:bg-[#eaf2ff] hover:text-[#1d4ed8]"
+              }`
+            }
+          >
+            Interpreter
+          </NavLink>
+
+          <NavLink
+            to="/learn"
+            className={({ isActive }) =>
+              `${navLinkBase} ${
+                isActive
+                  ? "bg-[#2563eb] text-white shadow-sm"
+                  : "text-[#526174] hover:bg-[#eaf2ff] hover:text-[#1d4ed8]"
+              }`
+            }
+          >
+            Learn
+          </NavLink>
+        </div>
+      </nav>
+    </header>
   );
 }
