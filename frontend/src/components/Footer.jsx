@@ -1,17 +1,23 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-[#f0eee8] mt-10">
-      <div className="px-6 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#777]">
+    <footer className="border-t border-[#dbe7f5] bg-white">
+      <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center justify-between gap-3 px-6 py-6 text-center sm:flex-row sm:text-left md:px-8">
+
+        {/* Brand */}
         <div>
-          <p className="font-bold text-[#111111] text-base mb-1">SignVerse</p>
-          <p>Breaking communication barriers.</p>
+          <p className="text-sm font-semibold text-[#172033]">
+            SignVerse
+          </p>
+
+          <p className="mt-1 text-xs text-[#64748b]">
+            Bridging communication through Indian Sign Language.
+          </p>
         </div>
-        <div className="flex gap-6">
-          <a href="#" className="hover:text-[#111111]">GitHub</a>
-          <a href="#" className="hover:text-[#111111]">Contact</a>
-          <a href="#" className="hover:text-[#111111]">Privacy policy</a>
-        </div>
-        <p>Copyright © 2026 SignVerse</p>
+
+        {/* Copyright */}
+        <p className="text-xs text-[#94a3b8]">
+          © {new Date().getFullYear()} SignVerse. All rights reserved.
+        </p>
       </div>
     </footer>
   );
