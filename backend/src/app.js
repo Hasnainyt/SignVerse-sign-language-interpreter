@@ -24,6 +24,10 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
 app.use("/api/translate", translateRouter);
 app.use("/api/recognize", recognizeRouter);
 app.use("/api/tts", ttsRouter);
